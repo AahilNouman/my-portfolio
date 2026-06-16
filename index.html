@@ -14,24 +14,50 @@
 </head>
 <body>
 
-  <!-- NAV -->
+  <!-- ═══════════════════════════════════ DESKTOP NAV ══ -->
   <nav id="navbar" class="navbar">
     <div class="nav-inner">
-      <a href="#hero" class="nav-logo" id="nav-logo">Aahil<span class="logo-dot">.</span></a>
-      <ul class="nav-links" id="nav-links">
-        <li><a href="#about"     class="nav-link">About</a></li>
-        <li><a href="#skills"    class="nav-link">Skills</a></li>
-        <li><a href="#projects"  class="nav-link">Projects</a></li>
-        <li><a href="#education" class="nav-link">Education</a></li>
-        <li><a href="#contact"   class="nav-link nav-cta">Contact</a></li>
-      </ul>
-      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
+
+      <a href="#hero" class="nav-logo" id="nav-logo">
+        Aahil<span class="logo-dot">.</span>
+      </a>
+
+      <div class="nav-links" id="nav-links">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#education" class="nav-link">Education</a>
+        <a href="#contact" class="nav-link nav-cta">Contact</a>
+      </div>
+
     </div>
   </nav>
 
-  <!-- HERO -->
+  <!-- ═══════════════════════════════ MOBILE BOTTOM NAV ══ -->
+  <nav class="mob-nav" id="mob-nav" aria-label="Navigation">
+    <a href="#about"     class="mni" data-s="about"     id="mni-about">
+      <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.9" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+      <span>About</span>
+    </a>
+    <a href="#skills"    class="mni" data-s="skills"    id="mni-skills">
+      <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.9" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+      <span>Skills</span>
+    </a>
+    <a href="#projects"  class="mni" data-s="projects"  id="mni-projects">
+      <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.9" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+      <span>Projects</span>
+    </a>
+    <a href="#education" class="mni" data-s="education" id="mni-education">
+      <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.9" viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5-10-5z"/><path d="M6 12v5c3.6 2 8.4 2 12 0v-5"/></svg>
+      <span>Edu</span>
+    </a>
+    <a href="#contact"   class="mni" data-s="contact"   id="mni-contact">
+      <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.9" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
+      <span>Contact</span>
+    </a>
+  </nav>
+
+  <!-- ═════════════════════════════════════════ HERO ══ -->
   <section id="hero" class="hero">
     <div class="hero-bg">
       <div class="orb orb-1"></div>
@@ -44,8 +70,7 @@
         Open to Opportunities
       </div>
       <h1 class="hero-name">
-        Mohammed<br />
-        <span class="gradient-text">Aahil Nouman</span>
+        Mohammed<br /><span class="gradient-text">Aahil Nouman</span>
       </h1>
       <p class="hero-tagline">Full Stack Developer</p>
       <p class="hero-sub">
@@ -53,111 +78,56 @@
       </p>
       <div class="hero-cta">
         <a href="#projects" class="btn btn-primary" id="btn-projects">View My Work</a>
-        <a href="#contact"  class="btn btn-outline" id="btn-contact">Let's Talk</a>
+        <a href="#contact"  class="btn btn-outline"  id="btn-contact">Let's Talk</a>
       </div>
       <div class="hero-divider"></div>
     </div>
   </section>
 
-  <!-- ABOUT -->
+  <!-- ═══════════════════════════════════════ ABOUT ══ -->
   <section id="about" class="section about-section">
     <div class="container">
       <div class="about-grid">
 
-        <!-- LEFT: editorial bio -->
         <div class="about-left">
           <div class="about-intro-label">About Me</div>
-          <h2 class="about-headline">
-            Building software that<br /><span class="gradient-text">makes an impact</span>
-          </h2>
-          <p class="about-pull">
-            A Computer Science student who builds production-ready full-stack applications — not just projects.
-          </p>
-          <p class="about-body">
-            I'm a Fourth-Year B.Tech CSE student at Presidency University, Bengaluru, with a strong focus on full-stack development and modern web technologies. My work spans cloud-deployed applications, real-time platforms, and interfaces that prioritize both performance and usability.
-          </p>
-          <p class="about-body">
-            I enjoy the challenge of taking a product from concept to deployment — writing clean frontend code, designing thoughtful APIs, and deploying reliably to the cloud. I'm continuously deepening my understanding of system design and scalable backend architecture.
-          </p>
+          <h2 class="about-headline">Building software that<br /><span class="gradient-text">makes an impact</span></h2>
+          <p class="about-pull">A Computer Science student who builds production-ready full-stack applications — not just projects.</p>
+          <p class="about-body">I'm a Fourth-Year B.Tech CSE student at Presidency University, Bengaluru, with a strong focus on full-stack development and modern web technologies. My work spans cloud-deployed applications, real-time platforms, and interfaces that prioritize both performance and usability.</p>
+          <p class="about-body">I enjoy the challenge of taking a product from concept to deployment — writing clean frontend code, designing thoughtful APIs, and deploying reliably to the cloud. I'm continuously deepening my understanding of system design and scalable backend architecture.</p>
           <div class="about-meta">
-            <div class="about-meta-row">
-              <span class="meta-label">University</span>
-              <span class="meta-value"><strong>Presidency University</strong>, Bengaluru</span>
-            </div>
-            <div class="about-meta-row">
-              <span class="meta-label">Degree</span>
-              <span class="meta-value">B.Tech — Computer Science Engineering</span>
-            </div>
-            <div class="about-meta-row">
-              <span class="meta-label">Expected</span>
-              <span class="meta-value">2027</span>
-            </div>
-            <div class="about-meta-row">
-              <span class="meta-label">CGPA</span>
-              <span class="meta-value"><span class="gold">8.51 / 10</span></span>
-            </div>
-            <div class="about-meta-row">
-              <span class="meta-label">Status</span>
-              <span class="meta-value"><strong>Open to internships &amp; opportunities</strong></span>
-            </div>
+            <div class="about-meta-row"><span class="meta-label">University</span><span class="meta-value"><strong>Presidency University</strong>, Bengaluru</span></div>
+            <div class="about-meta-row"><span class="meta-label">Degree</span><span class="meta-value">B.Tech — Computer Science Engineering</span></div>
+            <div class="about-meta-row"><span class="meta-label">Expected</span><span class="meta-value">2027</span></div>
+            <div class="about-meta-row"><span class="meta-label">CGPA</span><span class="meta-value"><span class="gold">8.51 / 10</span></span></div>
+            <div class="about-meta-row"><span class="meta-label">Status</span><span class="meta-value"><strong>Open to internships &amp; opportunities</strong></span></div>
           </div>
         </div>
 
-        <!-- RIGHT: stats + strengths -->
         <div class="about-right">
           <div class="about-stats-card">
-            <div class="astat">
-              <div class="astat-num" data-target="3">0</div>
-              <div class="astat-lbl">Major Projects</div>
-            </div>
+            <div class="astat"><div class="astat-num" data-target="3">0</div><div class="astat-lbl">Major Projects</div></div>
             <div class="astat-sep"></div>
-            <div class="astat">
-              <div class="astat-num" data-target="8.51" data-decimal="true">0</div>
-              <div class="astat-lbl">CGPA</div>
-            </div>
+            <div class="astat"><div class="astat-num" data-target="8.51" data-decimal="true">0</div><div class="astat-lbl">CGPA</div></div>
             <div class="astat-sep"></div>
-            <div class="astat">
-              <div class="astat-num" data-target="3">0</div>
-              <div class="astat-lbl">Certifications</div>
-            </div>
+            <div class="astat"><div class="astat-num" data-target="3">0</div><div class="astat-lbl">Certifications</div></div>
           </div>
-
           <div class="about-pillars">
             <div class="pillar-item">
-              <div class="pillar-icon">
-                <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="16,18 22,12 16,6"/><polyline points="8,6 2,12 8,18"/></svg>
-              </div>
-              <div>
-                <div class="pillar-title">Frontend</div>
-                <div class="pillar-desc">Modern, responsive UIs with React</div>
-              </div>
+              <div class="pillar-icon"><svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="16,18 22,12 16,6"/><polyline points="8,6 2,12 8,18"/></svg></div>
+              <div><div class="pillar-title">Frontend</div><div class="pillar-desc">Modern, responsive UIs with React</div></div>
             </div>
             <div class="pillar-item">
-              <div class="pillar-icon">
-                <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-              </div>
-              <div>
-                <div class="pillar-title">Backend</div>
-                <div class="pillar-desc">Scalable APIs with Node &amp; Express</div>
-              </div>
+              <div class="pillar-icon"><svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+              <div><div class="pillar-title">Backend</div><div class="pillar-desc">Scalable APIs with Node &amp; Express</div></div>
             </div>
             <div class="pillar-item">
-              <div class="pillar-icon">
-                <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
-              </div>
-              <div>
-                <div class="pillar-title">Cloud</div>
-                <div class="pillar-desc">Deployed on AWS with CI/CD</div>
-              </div>
+              <div class="pillar-icon"><svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg></div>
+              <div><div class="pillar-title">Cloud</div><div class="pillar-desc">Deployed on AWS with CI/CD</div></div>
             </div>
             <div class="pillar-item">
-              <div class="pillar-icon">
-                <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="22,12 18,12 15,21 9,3 6,12 2,12"/></svg>
-              </div>
-              <div>
-                <div class="pillar-title">Problem Solving</div>
-                <div class="pillar-desc">DSA &amp; algorithmic thinking</div>
-              </div>
+              <div class="pillar-icon"><svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="22,12 18,12 15,21 9,3 6,12 2,12"/></svg></div>
+              <div><div class="pillar-title">Problem Solving</div><div class="pillar-desc">DSA &amp; algorithmic thinking</div></div>
             </div>
           </div>
         </div>
@@ -166,7 +136,7 @@
     </div>
   </section>
 
-  <!-- SKILLS -->
+  <!-- ═══════════════════════════════════════ SKILLS ══ -->
   <section id="skills" class="section skills-section">
     <div class="container">
       <div class="section-eyebrow">Skills</div>
@@ -175,87 +145,35 @@
       <div class="skills-grid">
 
         <div class="skill-cat" id="sk-frontend">
-          <div class="sk-header">
-            <div class="sk-icon">
-              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="16,18 22,12 16,6"/><polyline points="8,6 2,12 8,18"/></svg>
-            </div>
-            <h3>Frontend</h3>
-          </div>
-          <div class="sk-tags">
-            <span class="sk-tag primary">React.js</span>
-            <span class="sk-tag primary">JavaScript ES6+</span>
-            <span class="sk-tag">HTML5</span>
-            <span class="sk-tag">CSS3</span>
-            <span class="sk-tag">Responsive Design</span>
-          </div>
+          <div class="sk-header"><div class="sk-icon"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="16,18 22,12 16,6"/><polyline points="8,6 2,12 8,18"/></svg></div><h3>Frontend</h3></div>
+          <div class="sk-tags"><span class="sk-tag primary">React.js</span><span class="sk-tag primary">JavaScript ES6+</span><span class="sk-tag">HTML5</span><span class="sk-tag">CSS3</span><span class="sk-tag">Responsive Design</span></div>
         </div>
 
         <div class="skill-cat" id="sk-backend">
-          <div class="sk-header">
-            <div class="sk-icon">
-              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-            </div>
-            <h3>Backend</h3>
-          </div>
-          <div class="sk-tags">
-            <span class="sk-tag primary">Node.js</span>
-            <span class="sk-tag primary">Express.js</span>
-            <span class="sk-tag">REST APIs</span>
-            <span class="sk-tag">JWT Auth</span>
-            <span class="sk-tag">WebSockets</span>
-            <span class="sk-tag">WebRTC</span>
-          </div>
+          <div class="sk-header"><div class="sk-icon"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div><h3>Backend</h3></div>
+          <div class="sk-tags"><span class="sk-tag primary">Node.js</span><span class="sk-tag primary">Express.js</span><span class="sk-tag">REST APIs</span><span class="sk-tag">JWT Auth</span><span class="sk-tag">WebSockets</span><span class="sk-tag">WebRTC</span></div>
         </div>
 
         <div class="skill-cat" id="sk-db">
-          <div class="sk-header">
-            <div class="sk-icon">
-              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
-            </div>
-            <h3>Database</h3>
-          </div>
-          <div class="sk-tags">
-            <span class="sk-tag primary">MongoDB</span>
-            <span class="sk-tag">MySQL</span>
-            <span class="sk-tag">Database Design</span>
-          </div>
+          <div class="sk-header"><div class="sk-icon"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg></div><h3>Database</h3></div>
+          <div class="sk-tags"><span class="sk-tag primary">MongoDB</span><span class="sk-tag">MySQL</span><span class="sk-tag">Database Design</span></div>
         </div>
 
         <div class="skill-cat" id="sk-lang">
-          <div class="sk-header">
-            <div class="sk-icon">
-              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/></svg>
-            </div>
-            <h3>Languages</h3>
-          </div>
-          <div class="sk-tags">
-            <span class="sk-tag primary">JavaScript</span>
-            <span class="sk-tag">Java</span>
-            <span class="sk-tag">Python</span>
-            <span class="sk-tag">C++</span>
-          </div>
+          <div class="sk-header"><div class="sk-icon"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/></svg></div><h3>Languages</h3></div>
+          <div class="sk-tags"><span class="sk-tag primary">JavaScript</span><span class="sk-tag">Java</span><span class="sk-tag">Python</span><span class="sk-tag">C++</span></div>
         </div>
 
         <div class="skill-cat" id="sk-tools">
-          <div class="sk-header">
-            <div class="sk-icon">
-              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-            </div>
-            <h3>Tools &amp; Platforms</h3>
-          </div>
-          <div class="sk-tags">
-            <span class="sk-tag primary">AWS</span>
-            <span class="sk-tag">Git &amp; GitHub</span>
-            <span class="sk-tag">VS Code</span>
-            <span class="sk-tag">Postman</span>
-          </div>
+          <div class="sk-header"><div class="sk-icon"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div><h3>Tools &amp; Platforms</h3></div>
+          <div class="sk-tags"><span class="sk-tag primary">AWS</span><span class="sk-tag">Git &amp; GitHub</span><span class="sk-tag">VS Code</span><span class="sk-tag">Postman</span></div>
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- PROJECTS -->
+  <!-- ═══════════════════════════════════════ PROJECTS ══ -->
   <section id="projects" class="section projects-section">
     <div class="container">
       <div class="section-eyebrow">Projects</div>
@@ -264,32 +182,17 @@
       <div class="projects-list">
 
         <div class="project-card" id="proj-staysphere">
-          <div class="proj-meta">
-            <span class="proj-num">01</span>
-            <span class="proj-type">Full Stack · Rental Platform</span>
-          </div>
+          <div class="proj-meta"><span class="proj-num">01</span><span class="proj-type">Full Stack · Rental Platform</span></div>
           <div class="proj-body">
             <div class="proj-left">
               <h3 class="proj-name">StaySphere</h3>
               <p class="proj-desc">A cloud-based property rental platform enabling users to discover, list, and manage accommodations through a seamless booking experience with full authentication and cloud media storage.</p>
-              <div class="proj-features">
-                <span>Secure Auth &amp; Authorization</span>
-                <span>Property Listing Management</span>
-                <span>Advanced Search &amp; Filters</span>
-                <span>Booking System</span>
-                <span>Reviews &amp; Ratings</span>
-                <span>AWS Media Storage</span>
-              </div>
-              <div class="proj-tech">
-                <span>React</span><span>Node.js</span><span>Express.js</span><span>MongoDB</span><span>AWS</span>
-              </div>
+              <div class="proj-features"><span>Secure Auth &amp; Authorization</span><span>Property Listing Management</span><span>Advanced Search &amp; Filters</span><span>Booking System</span><span>Reviews &amp; Ratings</span><span>AWS Media Storage</span></div>
+              <div class="proj-tech"><span>React</span><span>Node.js</span><span>Express.js</span><span>MongoDB</span><span>AWS</span></div>
             </div>
             <div class="proj-visual staysphere-vis">
               <div class="vis-browser">
-                <div class="vis-bar">
-                  <span class="vb-d r"></span><span class="vb-d y"></span><span class="vb-d g"></span>
-                  <span class="vb-url">staysphere.app</span>
-                </div>
+                <div class="vis-bar"><span class="vb-d r"></span><span class="vb-d y"></span><span class="vb-d g"></span><span class="vb-url">staysphere.app</span></div>
                 <div class="vis-content">
                   <div class="vis-search-bar"></div>
                   <div class="vis-cards">
@@ -304,46 +207,22 @@
         </div>
 
         <div class="project-card" id="proj-tradeflow">
-          <div class="proj-meta">
-            <span class="proj-num">02</span>
-            <span class="proj-type">Full Stack · Finance Platform</span>
-          </div>
+          <div class="proj-meta"><span class="proj-num">02</span><span class="proj-type">Full Stack · Finance Platform</span></div>
           <div class="proj-body">
             <div class="proj-left">
               <h3 class="proj-name">TradeFlow</h3>
               <p class="proj-desc">A comprehensive trading dashboard providing real-time portfolio tracking, market analytics, and investment management with interactive data visualization.</p>
-              <div class="proj-features">
-                <span>Portfolio Management</span>
-                <span>Market Analytics</span>
-                <span>Interactive Dashboard</span>
-                <span>Trading Simulations</span>
-                <span>Watchlists</span>
-                <span>Performance Tracking</span>
-              </div>
-              <div class="proj-tech">
-                <span>React</span><span>Node.js</span><span>Express.js</span><span>MongoDB</span><span>AWS</span>
-              </div>
+              <div class="proj-features"><span>Portfolio Management</span><span>Market Analytics</span><span>Interactive Dashboard</span><span>Trading Simulations</span><span>Watchlists</span><span>Performance Tracking</span></div>
+              <div class="proj-tech"><span>React</span><span>Node.js</span><span>Express.js</span><span>MongoDB</span><span>AWS</span></div>
             </div>
             <div class="proj-visual tradeflow-vis">
               <div class="vis-browser">
-                <div class="vis-bar">
-                  <span class="vb-d r"></span><span class="vb-d y"></span><span class="vb-d g"></span>
-                  <span class="vb-url">tradeflow.app</span>
-                </div>
+                <div class="vis-bar"><span class="vb-d r"></span><span class="vb-d y"></span><span class="vb-d g"></span><span class="vb-url">tradeflow.app</span></div>
                 <div class="vis-content">
-                  <div class="dash-row-top">
-                    <div class="dash-stat-card up">+12.4%</div>
-                    <div class="dash-stat-card dn">-3.1%</div>
-                    <div class="dash-stat-card up">+8.7%</div>
-                  </div>
+                  <div class="dash-row-top"><div class="dash-stat-card up">+12.4%</div><div class="dash-stat-card dn">-3.1%</div><div class="dash-stat-card up">+8.7%</div></div>
                   <div class="dash-chart-area">
                     <svg viewBox="0 0 240 80" preserveAspectRatio="none">
-                      <defs>
-                        <linearGradient id="cg" x1="0" y1="0" x2="0" y2="1">
-                          <stop offset="0%" stop-color="rgba(201,169,110,0.3)"/>
-                          <stop offset="100%" stop-color="rgba(201,169,110,0)"/>
-                        </linearGradient>
-                      </defs>
+                      <defs><linearGradient id="cg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="rgba(201,169,110,0.3)"/><stop offset="100%" stop-color="rgba(201,169,110,0)"/></linearGradient></defs>
                       <polygon fill="url(#cg)" points="0,70 30,55 60,60 90,40 120,45 150,25 180,30 210,15 240,18 240,80 0,80"/>
                       <polyline fill="none" stroke="#c9a96e" stroke-width="2" points="0,70 30,55 60,60 90,40 120,45 150,25 180,30 210,15 240,18"/>
                     </svg>
@@ -355,32 +234,17 @@
         </div>
 
         <div class="project-card" id="proj-connectmeet">
-          <div class="proj-meta">
-            <span class="proj-num">03</span>
-            <span class="proj-type">Real-Time · Communication Platform</span>
-          </div>
+          <div class="proj-meta"><span class="proj-num">03</span><span class="proj-type">Real-Time · Communication Platform</span></div>
           <div class="proj-body">
             <div class="proj-left">
               <h3 class="proj-name">ConnectMeet</h3>
               <p class="proj-desc">A real-time collaboration platform enabling secure HD video conferencing, instant messaging, and screen sharing — built on WebRTC and WebSocket architecture.</p>
-              <div class="proj-features">
-                <span>HD Video Calling</span>
-                <span>Real-Time Messaging</span>
-                <span>Screen Sharing</span>
-                <span>Meeting Rooms</span>
-                <span>Participant Management</span>
-                <span>WebRTC Integration</span>
-              </div>
-              <div class="proj-tech">
-                <span>React</span><span>Node.js</span><span>Express.js</span><span>WebRTC</span><span>WebSockets</span>
-              </div>
+              <div class="proj-features"><span>HD Video Calling</span><span>Real-Time Messaging</span><span>Screen Sharing</span><span>Meeting Rooms</span><span>Participant Management</span><span>WebRTC Integration</span></div>
+              <div class="proj-tech"><span>React</span><span>Node.js</span><span>Express.js</span><span>WebRTC</span><span>WebSockets</span></div>
             </div>
             <div class="proj-visual connectmeet-vis">
               <div class="vis-browser">
-                <div class="vis-bar">
-                  <span class="vb-d r"></span><span class="vb-d y"></span><span class="vb-d g"></span>
-                  <span class="vb-url">connectmeet.app</span>
-                </div>
+                <div class="vis-bar"><span class="vb-d r"></span><span class="vb-d y"></span><span class="vb-d g"></span><span class="vb-url">connectmeet.app</span></div>
                 <div class="vis-content">
                   <div class="vid-grid">
                     <div class="vid-tile active"><span>👤</span><div class="vid-lbl">You</div></div>
@@ -388,12 +252,7 @@
                     <div class="vid-tile"><span>👤</span><div class="vid-lbl">Sam</div></div>
                     <div class="vid-tile"><span>👤</span><div class="vid-lbl">Jordan</div></div>
                   </div>
-                  <div class="vid-controls">
-                    <div class="vc-btn">🎤</div>
-                    <div class="vc-btn">📹</div>
-                    <div class="vc-btn">💬</div>
-                    <div class="vc-btn end">✕</div>
-                  </div>
+                  <div class="vid-controls"><div class="vc-btn">🎤</div><div class="vc-btn">📹</div><div class="vc-btn">💬</div><div class="vc-btn end">✕</div></div>
                 </div>
               </div>
             </div>
@@ -404,36 +263,19 @@
 
       <!-- Minor Projects -->
       <div class="minor-projects-wrap">
-        <div class="minor-header">
-          <span>Other Projects</span>
-          <div class="minor-line"></div>
-        </div>
+        <div class="minor-header"><span>Other Projects</span><div class="minor-line"></div></div>
         <div class="minor-grid">
           <div class="minor-card" id="proj-ar">
-            <div class="minor-card-top">
-              <div class="minor-icon">
-                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="6"/><circle cx="8" cy="12" r="2"/><circle cx="16" cy="12" r="2"/><line x1="10" y1="12" x2="14" y2="12"/></svg>
-              </div>
-              <div class="minor-badge">Hardware</div>
-            </div>
+            <div class="minor-card-top"><div class="minor-icon"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="6"/><circle cx="8" cy="12" r="2"/><circle cx="16" cy="12" r="2"/><line x1="10" y1="12" x2="14" y2="12"/></svg></div><div class="minor-badge">Hardware</div></div>
             <h4>AR Headset Interface Controller</h4>
             <p>Wireless communication system linking a VR headset to Raspberry Pi Pico for real-time camera feed and remote control.</p>
-            <div class="minor-tags">
-              <span>Python</span><span>Raspberry Pi Pico</span><span>Networking</span>
-            </div>
+            <div class="minor-tags"><span>Python</span><span>Raspberry Pi Pico</span><span>Networking</span></div>
           </div>
           <div class="minor-card" id="proj-piano">
-            <div class="minor-card-top">
-              <div class="minor-icon">
-                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><line x1="7" y1="4" x2="7" y2="15"/><line x1="10" y1="4" x2="10" y2="15"/><line x1="14" y1="4" x2="14" y2="15"/><line x1="17" y1="4" x2="17" y2="15"/></svg>
-              </div>
-              <div class="minor-badge">Embedded</div>
-            </div>
+            <div class="minor-card-top"><div class="minor-icon"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><line x1="7" y1="4" x2="7" y2="15"/><line x1="10" y1="4" x2="10" y2="15"/><line x1="14" y1="4" x2="14" y2="15"/><line x1="17" y1="4" x2="17" y2="15"/></svg></div><div class="minor-badge">Embedded</div></div>
             <h4>Arduino Digital Piano</h4>
             <p>Microcontroller-powered digital piano generating musical notes via frequency-based sound programming on custom hardware.</p>
-            <div class="minor-tags">
-              <span>Arduino</span><span>C++</span><span>Embedded Systems</span>
-            </div>
+            <div class="minor-tags"><span>Arduino</span><span>C++</span><span>Embedded Systems</span></div>
           </div>
         </div>
       </div>
@@ -441,7 +283,7 @@
     </div>
   </section>
 
-  <!-- EDUCATION -->
+  <!-- ═══════════════════════════════════════ EDUCATION ══ -->
   <section id="education" class="section education-section">
     <div class="container">
       <div class="section-eyebrow">Education &amp; Certifications</div>
@@ -450,44 +292,31 @@
         <div class="edu-col">
           <h2 class="section-heading">Academic<br /><span class="gradient-text">Journey</span></h2>
           <div class="timeline">
-
             <div class="timeline-item" id="edu-btech">
               <div class="tl-dot active"></div>
               <div class="tl-card">
-                <div class="tl-top">
-                  <span class="tl-year">2023 – 2027</span>
-                  <span class="tl-status">Ongoing</span>
-                </div>
+                <div class="tl-top"><span class="tl-year">2023 – 2027</span><span class="tl-status">Ongoing</span></div>
                 <div class="tl-degree">B.Tech — Computer Science Engineering</div>
                 <div class="tl-school">Presidency University, Bengaluru</div>
                 <div class="tl-score">CGPA: <strong>8.51 / 10</strong></div>
               </div>
             </div>
-
             <div class="timeline-item" id="edu-puc">
               <div class="tl-dot"></div>
               <div class="tl-card">
-                <div class="tl-top">
-                  <span class="tl-year">2021 – 2023</span>
-                  <span class="tl-status done">Completed</span>
-                </div>
+                <div class="tl-top"><span class="tl-year">2021 – 2023</span><span class="tl-status done">Completed</span></div>
                 <div class="tl-degree">Pre-University Course (PUC)</div>
                 <div class="tl-school">Reva University, Bengaluru</div>
               </div>
             </div>
-
             <div class="timeline-item" id="edu-school">
               <div class="tl-dot"></div>
               <div class="tl-card">
-                <div class="tl-top">
-                  <span class="tl-year">Completed 2021</span>
-                  <span class="tl-status done">Completed</span>
-                </div>
+                <div class="tl-top"><span class="tl-year">Completed 2021</span><span class="tl-status done">Completed</span></div>
                 <div class="tl-degree">SSLC — 10th Grade</div>
                 <div class="tl-school">MC'NAY DOONS Public School, Bengaluru</div>
               </div>
             </div>
-
           </div>
         </div>
 
@@ -496,26 +325,17 @@
           <div class="cert-list">
             <div class="cert-item" id="cert-deloitte">
               <div class="cert-logo" style="background:rgba(134,25,143,0.10);color:#a855f7;">D</div>
-              <div class="cert-detail">
-                <div class="cert-name">Technology Virtual Experience Program</div>
-                <div class="cert-issuer">Deloitte</div>
-              </div>
+              <div class="cert-detail"><div class="cert-name">Technology Virtual Experience Program</div><div class="cert-issuer">Deloitte</div></div>
               <div class="cert-tick">✓</div>
             </div>
             <div class="cert-item" id="cert-accenture">
               <div class="cert-logo" style="background:rgba(139,157,195,0.10);color:#aabbd8;">A</div>
-              <div class="cert-detail">
-                <div class="cert-name">Developer &amp; Technology Virtual Experience</div>
-                <div class="cert-issuer">Accenture</div>
-              </div>
+              <div class="cert-detail"><div class="cert-name">Developer &amp; Technology Virtual Experience</div><div class="cert-issuer">Accenture</div></div>
               <div class="cert-tick">✓</div>
             </div>
             <div class="cert-item" id="cert-tata">
               <div class="cert-logo" style="background:rgba(201,169,110,0.10);color:#c9a96e;">T</div>
-              <div class="cert-detail">
-                <div class="cert-name">Data Analytics Virtual Experience Program</div>
-                <div class="cert-issuer">Tata Group</div>
-              </div>
+              <div class="cert-detail"><div class="cert-name">Data Analytics Virtual Experience Program</div><div class="cert-issuer">Tata Group</div></div>
               <div class="cert-tick">✓</div>
             </div>
           </div>
@@ -525,7 +345,7 @@
     </div>
   </section>
 
-  <!-- CONTACT -->
+  <!-- ═══════════════════════════════════════ CONTACT ══ -->
   <section id="contact" class="section contact-section">
     <div class="container">
       <div class="section-eyebrow">Contact</div>
@@ -533,38 +353,21 @@
 
         <div class="contact-left">
           <h2 class="section-heading">Let's build something<br /><span class="gradient-text">meaningful together</span></h2>
-          <p class="body-text">
-            I'm always open to software engineering opportunities, internships, collaborations, and project discussions. Feel free to reach out — I'd love to connect.
-          </p>
+          <p class="body-text">I'm always open to software engineering opportunities, internships, collaborations, and project discussions. Feel free to reach out — I'd love to connect.</p>
           <div class="contact-links">
             <a href="mailto:noumanaahil4@gmail.com" class="contact-link" id="link-email">
-              <div class="cl-icon">
-                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
-              </div>
-              <div>
-                <div class="cl-label">Email</div>
-                <div class="cl-value">noumanaahil4@gmail.com</div>
-              </div>
+              <div class="cl-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg></div>
+              <div><div class="cl-label">Email</div><div class="cl-value">noumanaahil4@gmail.com</div></div>
               <svg class="cl-arrow" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7,7 17,7 17,17"/></svg>
             </a>
             <a href="https://linkedin.com" target="_blank" rel="noopener" class="contact-link" id="link-linkedin">
-              <div class="cl-icon">
-                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-              </div>
-              <div>
-                <div class="cl-label">LinkedIn</div>
-                <div class="cl-value">Connect with me</div>
-              </div>
+              <div class="cl-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></div>
+              <div><div class="cl-label">LinkedIn</div><div class="cl-value">Connect with me</div></div>
               <svg class="cl-arrow" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7,7 17,7 17,17"/></svg>
             </a>
             <a href="https://github.com" target="_blank" rel="noopener" class="contact-link" id="link-github">
-              <div class="cl-icon">
-                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-              </div>
-              <div>
-                <div class="cl-label">GitHub</div>
-                <div class="cl-value">View my repositories</div>
-              </div>
+              <div class="cl-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></div>
+              <div><div class="cl-label">GitHub</div><div class="cl-value">View my repositories</div></div>
               <svg class="cl-arrow" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7,7 17,7 17,17"/></svg>
             </a>
           </div>
@@ -573,30 +376,16 @@
         <div class="contact-right">
           <form id="contact-form" class="contact-form" novalidate>
             <div class="form-row">
-              <div class="form-field">
-                <label for="f-name">Name</label>
-                <input type="text" id="f-name" placeholder="Your name" autocomplete="name" required />
-              </div>
-              <div class="form-field">
-                <label for="f-email">Email</label>
-                <input type="email" id="f-email" placeholder="your@email.com" autocomplete="email" required />
-              </div>
+              <div class="form-field"><label for="f-name">Name</label><input type="text" id="f-name" placeholder="Your name" autocomplete="name" required /></div>
+              <div class="form-field"><label for="f-email">Email</label><input type="email" id="f-email" placeholder="your@email.com" autocomplete="email" required /></div>
             </div>
-            <div class="form-field">
-              <label for="f-subject">Subject</label>
-              <input type="text" id="f-subject" placeholder="Internship / Collaboration / Project" />
-            </div>
-            <div class="form-field">
-              <label for="f-message">Message</label>
-              <textarea id="f-message" rows="5" placeholder="Tell me about the opportunity or project..." required></textarea>
-            </div>
+            <div class="form-field"><label for="f-subject">Subject</label><input type="text" id="f-subject" placeholder="Internship / Collaboration / Project" /></div>
+            <div class="form-field"><label for="f-message">Message</label><textarea id="f-message" rows="5" placeholder="Tell me about the opportunity or project..." required></textarea></div>
             <button type="submit" class="btn btn-primary btn-full" id="form-submit">
               <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22,2 15,22 11,13 2,9"/></svg>
               Send Message
             </button>
-            <div id="form-success" class="form-success" style="display:none">
-              ✓ Message sent! I'll get back to you soon.
-            </div>
+            <div id="form-success" class="form-success" style="display:none">✓ Message sent! I'll get back to you soon.</div>
           </form>
         </div>
 
@@ -604,7 +393,7 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
+  <!-- ═══════════════════════════════════════ FOOTER ══ -->
   <footer class="footer">
     <div class="container">
       <div class="footer-inner">

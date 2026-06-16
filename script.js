@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════
-   AAHIL NOUMAN — script.js
+   PORTFOLIO — script.js
 ═══════════════════════════════════════════════════ */
 
 // ── PROGRESS BAR ─────────────────────────────────────
@@ -11,56 +11,47 @@ window.addEventListener('scroll', () => {
   bar.style.width = Math.min(pct, 100) + '%';
 }, { passive: true });
 
-// ── NAVBAR ────────────────────────────────────────────
-const navbar   = document.getElementById('navbar');
-const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('.nav-link');
+// ── NAVBAR + ACTIVE LINKS ────────────────────────────
+const navbar     = document.getElementById('navbar');
+const sections   = document.querySelectorAll('section[id]');
+const navLinks   = document.querySelectorAll('.nav-link');   // desktop links
+const mobItems   = document.querySelectorAll('.mni');        // mobile bottom icons
 
-window.addEventListener('scroll', () => {
+function updateNav() {
   navbar.classList.toggle('scrolled', window.scrollY > 40);
-  // Active nav link highlight
+
   let current = '';
-  sections.forEach(s => { if (window.scrollY >= s.offsetTop - 120) current = s.id; });
-  navLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + current));
-}, { passive: true });
+  sections.forEach(s => {
+    if (window.scrollY >= s.offsetTop - 140) current = s.id;
+  });
 
-// ── HAMBURGER MENU ────────────────────────────────────
-const ham     = document.getElementById('hamburger');
-const navMenu = document.getElementById('nav-links');
-
-function openMenu() {
-  navMenu.classList.add('open');
-  ham.classList.add('open');
-  document.body.style.overflow = 'hidden'; // prevent scroll behind overlay
-}
-function closeMenu() {
-  navMenu.classList.remove('open');
-  ham.classList.remove('open');
-  document.body.style.overflow = '';
+  navLinks.forEach(a =>
+    a.classList.toggle('active', a.getAttribute('href') === '#' + current)
+  );
+  mobItems.forEach(a =>
+    a.classList.toggle('active', a.dataset.s === current)
+  );
 }
 
-ham.addEventListener('click', () => {
-  navMenu.classList.contains('open') ? closeMenu() : openMenu();
+window.addEventListener('scroll', updateNav, { passive: true });
+updateNav();
+
+// ── SMOOTH SCROLL (mobile pill links) ────────────────
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (!target) return;
+    e.preventDefault();
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
 });
-
-// Close on any nav link click
-navMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
-
-// Close on overlay click (tap outside menu links)
-navMenu.addEventListener('click', e => { if (e.target === navMenu) closeMenu(); });
-
-// Close on Escape
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
 
 // ── SCROLL REVEAL ─────────────────────────────────────
 const revealObs = new IntersectionObserver(entries => {
   entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.classList.add('visible');
-      revealObs.unobserve(e.target);
-    }
+    if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); }
   });
-}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
 document.querySelectorAll([
   '.about-left', '.about-right',
@@ -82,22 +73,20 @@ const statsObs = new IntersectionObserver(entries => {
     e.target.querySelectorAll('[data-target]').forEach(el => {
       const target  = parseFloat(el.dataset.target);
       const decimal = el.dataset.decimal === 'true';
-      const dur     = 1400;
-      const t0      = performance.now();
-      const suffix  = decimal ? '' : '+';
-
-      (function tick(now) {
-        const p    = Math.min((now - t0) / dur, 1);
+      const dur = 1500, t0 = performance.now();
+      function tick(now) {
+        const p   = Math.min((now - t0) / dur, 1);
         const ease = 1 - Math.pow(1 - p, 3);
         const val  = target * ease;
-        el.textContent = decimal ? val.toFixed(2) : Math.floor(val) + suffix;
+        el.textContent = decimal ? val.toFixed(2) : Math.floor(val) + (p < 1 ? '' : '+');
         if (p < 1) requestAnimationFrame(tick);
-        else el.textContent = decimal ? target.toFixed(2) : target + suffix;
-      })(performance.now());
+        else el.textContent = decimal ? target.toFixed(2) : target + '+';
+      }
+      requestAnimationFrame(tick);
     });
     statsObs.unobserve(e.target);
   });
-}, { threshold: 0.5 });
+}, { threshold: 0.6 });
 
 const statsCard = document.querySelector('.about-stats-card');
 if (statsCard) statsObs.observe(statsCard);
@@ -110,51 +99,40 @@ const submitB = document.getElementById('form-submit');
 if (form) {
   form.addEventListener('submit', e => {
     e.preventDefault();
-
     const fields = [
-      { el: document.getElementById('f-name'),    ok: v => v.length > 0,     msg: 'Name required' },
-      { el: document.getElementById('f-email'),   ok: v => /\S+@\S+\.\S+/.test(v), msg: 'Valid email required' },
-      { el: document.getElementById('f-message'), ok: v => v.length > 0,     msg: 'Message required' }
+      { el: document.getElementById('f-name'),    ok: v => v.length > 0 },
+      { el: document.getElementById('f-email'),   ok: v => v.includes('@') },
+      { el: document.getElementById('f-message'), ok: v => v.length > 0 }
     ];
-
     let valid = true;
     fields.forEach(({ el, ok }) => {
       if (!ok(el.value.trim())) {
         el.style.borderColor = 'var(--rose)';
-        el.style.boxShadow   = '0 0 0 3px rgba(201,106,106,0.12)';
-        setTimeout(() => { el.style.borderColor = ''; el.style.boxShadow = ''; }, 2800);
+        el.style.boxShadow   = '0 0 0 3px rgba(201,106,106,0.1)';
+        setTimeout(() => { el.style.borderColor = ''; el.style.boxShadow = ''; }, 2500);
         valid = false;
       }
     });
     if (!valid) return;
-
     submitB.disabled = true;
-    submitB.innerHTML = `
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-        style="animation:spin .7s linear infinite"><path d="M21 12a9 9 0 1 1-6.2-8.6"/></svg>
-      Sending…`;
-
+    submitB.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="animation:spin .7s linear infinite"><path d="M21 12a9 9 0 1 1-6.2-8.6"/></svg> Sending…`;
     setTimeout(() => {
       form.reset();
       submitB.disabled = false;
-      submitB.innerHTML = `
-        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-          <line x1="22" y1="2" x2="11" y2="13"/>
-          <polygon points="22,2 15,22 11,13 2,9"/>
-        </svg> Send Message`;
+      submitB.innerHTML = `<svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22,2 15,22 11,13 2,9"/></svg> Send Message`;
       success.style.display = 'block';
       setTimeout(() => { success.style.display = 'none'; }, 5000);
     }, 1800);
   });
 }
 
-// ── 3D CARD TILT (desktop only) ──────────────────────
-if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+// ── CARD TILT (desktop only) ──────────────────────────
+if (!window.matchMedia('(hover: none)').matches) {
   document.querySelectorAll('.project-card').forEach(card => {
     card.addEventListener('mousemove', e => {
       const r  = card.getBoundingClientRect();
-      const rx = ((e.clientY - r.top  - r.height / 2) / r.height) * 2;
-      const ry = ((e.clientX - r.left - r.width  / 2) / r.width)  * -2;
+      const rx = ((e.clientY - r.top  - r.height / 2) / r.height) *  1.8;
+      const ry = ((e.clientX - r.left - r.width  / 2) / r.width)  * -1.8;
       card.style.transform = `perspective(1200px) rotateX(${rx}deg) rotateY(${ry}deg)`;
     });
     card.addEventListener('mouseleave', () => {
@@ -164,9 +142,6 @@ if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
     });
   });
 }
-
-// ── SMOOTH ACTIVE NAV ON LOAD ─────────────────────────
-window.dispatchEvent(new Event('scroll'));
 
 // ── SPINNER KEYFRAME ──────────────────────────────────
 const sty = document.createElement('style');
